@@ -1,0 +1,24 @@
+<div class="search-form" style="margin-top: 50px;">
+    {{!-- query param sẽ đính trên url, còn k đính thì là form data --}}
+    {{!-- GET thì dữ liệu truyền vào sẽ hiện ở URL => QUERY PARAMETERS
+          POST thì dữ liệu sẽ hiện ở F12 -> Network -> Payload, k hiện ở URL => FORM DATA
+     --}}
+    <form method="POST">  {{!-- method mặc định là GET, action sẽ submit ở đâu, mặc định là trống (URL hiện tại) --}}
+        <div class="form-group">
+            <label for="searchInput">Từ khóa</label>
+            <input type="text" name="q" class="form-control" id="searchInput" placeholder="Nhập từ khóa">
+        </div>
+        <div class="form-group">
+            <label for="gender input">Giới tính</label>
+            <select name="gender" class="form-control" id="gender input">
+                <option value="">Chọn giới tính</option>
+                <option value="male">Nam</option>
+                <option value="female">Nữ</option>
+            </select>
+        </div>
+
+        {{!-- Hành vi submit sẽ tạo ra 1 cái query parameter đính những thẻ input có attribute name lên URL/ URI
+        dựa trên tên vừa đặt ở name với tham số(param) là value của input --}}
+        <button type="submit" class="btn btn-primary">Search</button>
+    </form>
+</div>

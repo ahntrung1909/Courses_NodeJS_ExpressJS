@@ -1,0 +1,26 @@
+<div class="mt-4">
+    <h3>UPDATE COURSE</h3>
+    <form class="mt-4" method="POST" action="/courses/{{course._id}}?_method=PUT">
+    
+    {{!-- ROUTE: index.js có app.use('/courses', coursesRouter);
+    => courses.js có router.get('/:id/edit', coursesController.edit); /:id là sub-path
+    => CoursesController.js có //[GET] /courses/:id/edit
+     --}}
+
+        <div class="form-group">
+            <label for="name">Ten Khoa hoc</label>
+            <input value="{{course.name}}" type="text" name="name" class="form-control" id="name">
+        </div>
+        <div class="form-group">
+            <label for="description">Mo ta Khoa hoc</label>
+            <textarea name="description" class="form-control" id="description">{{course.description}}</textarea>
+        </div>
+        <div class="form-group">
+            <label for="videoId">Video ID</label>
+            <input value="{{course.videoId}}" type="text" name="videoId" class="form-control" id="videoId">
+        </div>
+
+        <button type="submit" class="btn btn-primary">UPDATE</button>
+
+    </form>
+</div>
